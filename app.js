@@ -1,10 +1,19 @@
-const validator = require('validator');
 const chalk = require('chalk');
-
+const yargs = require('yargs');
 const getThoughts = require('./thoughts.js');
 
-const thoughts = getThoughts();
+const command = process.argv[2];
+console.log(process.argv);
+console.log(yargs.argv);
 
-console.log(chalk.magentaBright.bgWhite.bold(thoughts));
-console.log(validator.isURL('ruthnewman.co.uk'));
-console.log(chalk.green('Success!'));
+switch(command) {
+  case 'add':
+    console.log('Adding a thought');
+    break;
+  case 'remove':
+    console.log('Removing a thought');
+    break;
+  default:
+    console.log('Try again');
+    break;
+}
