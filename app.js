@@ -7,8 +7,21 @@ yargs.version('1.1.0')
 yargs.command({
   command: 'add',
   describe: 'Add a new thought',
-  handler: function() {
-    console.log('Adding a new thought')
+  builder: {
+    heading: {
+      describe: 'Thought heading',
+      demandOption: true,
+      type: 'string'
+    },
+    body: {
+      describe: 'Your thought in detail',
+      demandOption: true,
+      type: 'string'
+    }
+  },
+  handler: (argv) => {
+    console.log('Heading: ' + argv.heading)
+    console.log('Body: ' + argv.body)
   }
 })
 
@@ -36,5 +49,5 @@ yargs.command({
   }
 })
 
-
-console.log(yargs.argv);
+yargs.parse();
+// console.log(yargs.argv);
