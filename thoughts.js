@@ -6,11 +6,25 @@ const getThoughts = () => {
 
 const addThought = (heading, body) => {
   const thoughts = loadExistingThoughts()
-  thoughts.push({
-    heading: heading,
-    body: body
+  const redundantThoughts = thoughts.filter((thought) => {
+    return thought.heading === heading
   })
-  console.log(thoughts);
+  if(redundantThoughts.length === 0) {
+    thoughts.push({
+      heading: heading,
+      body: body
+    })
+    saveThoughts(thoughts);
+    console.log('Original thought added')
+  } else {
+    console.log('That\'s not an original thought!')
+  }
+
+}
+
+const saveThoughts = (thoughts) => {
+  const dataJSON = JSON.stringify(thoughts);
+  fs.writeFileSync('thoughts.json', dataJSON)
 }
 
 const loadExistingThoughts = () => {
