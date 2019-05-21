@@ -1,6 +1,6 @@
 const chalk = require('chalk');
 const yargs = require('yargs');
-const getThoughts = require('./thoughts.js');
+const thoughts = require('./thoughts.js');
 
 yargs.version('1.1.0')
 
@@ -20,8 +20,7 @@ yargs.command({
     }
   },
   handler: (argv) => {
-    console.log('Heading: ' + argv.heading)
-    console.log('Body: ' + argv.body)
+    thoughts.addThought(argv.heading, argv.body)
   }
 })
 
