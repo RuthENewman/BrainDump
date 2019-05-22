@@ -27,8 +27,15 @@ yargs.command({
 yargs.command({
   command: 'remove',
   describe: 'Remove a thought from the list',
-  handler: function() {
-    console.log('Removing that thought from your list')
+  builder: {
+    heading: {
+      describe: 'Thought heading',
+      demandOption: true,
+      type: 'string'
+    },
+  },
+  handler: (argv) => {
+    thoughts.removeThought(argv.heading)
   }
 })
 
