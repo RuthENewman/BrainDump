@@ -7,9 +7,7 @@ const getThoughts = () => {
 
 const addThought = (heading, body) => {
   const thoughts = loadExistingThoughts()
-  const redundantThoughts = thoughts.filter((thought) => {
-    return thought.heading === heading
-  })
+  const redundantThoughts = thoughts.filter(thought => thought.heading === heading)
   if(redundantThoughts.length === 0) {
     thoughts.push({
       heading: heading,
@@ -40,9 +38,7 @@ const loadExistingThoughts = () => {
 
 const removeThought = (heading) => {
   const thoughts = loadExistingThoughts();
-  const remainingThoughts = thoughts.filter(thought => {
-    return thought.heading !== heading
-  });
+  const remainingThoughts = thoughts.filter(thought => thought.heading !== heading);
   if(thoughts.length > remainingThoughts.length) {
     console.log(chalk.red.inverse('Thought removed from the list'))
   } else {

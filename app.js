@@ -34,15 +34,13 @@ yargs.command({
       type: 'string'
     },
   },
-  handler: (argv) => {
-    thoughts.removeThought(argv.heading)
-  }
+  handler: (argv) => thoughts.removeThought(argv.heading)
 })
 
 yargs.command({
   command: 'list',
   describe: 'Listing all thoughts',
-  handler: function() {
+  handler: () => {
     console.log('Listing out all your thoughts')
   }
 })
@@ -50,7 +48,7 @@ yargs.command({
 yargs.command({
   command: 'read',
   describe: 'Reading a thought',
-  handler: function() {
+  handler: () => {
     console.log('Reading a thought')
   }
 })
