@@ -40,15 +40,15 @@ yargs.command({
 yargs.command({
   command: 'list',
   describe: 'Listing all thoughts',
-  handler: () => {
-    console.log('Listing out all your thoughts')
+  handler() {
+    thoughts.listThoughts()
   }
 })
 
 yargs.command({
   command: 'read',
   describe: 'Reading a thought',
-  handler: () => {
+  handler() {
     console.log('Reading a thought')
   }
 })

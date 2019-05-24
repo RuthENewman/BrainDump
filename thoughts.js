@@ -47,8 +47,17 @@ const removeThought = (heading) => {
   saveThoughts(remainingThoughts);
 }
 
+const listThoughts = () => {
+  const thoughts = loadExistingThoughts()
+
+  console.log(chalk.inverse('Your thoughts...'))
+
+  thoughts.forEach(thought => console.log(thought.heading))
+}
+
 module.exports = {
   getThoughts: getThoughts,
   addThought: addThought,
-  removeThought: removeThought
+  removeThought: removeThought,
+  listThoughts: listThoughts
 };
