@@ -48,8 +48,15 @@ yargs.command({
 yargs.command({
   command: 'read',
   describe: 'Reading a thought',
-  handler() {
-    console.log('Reading a thought')
+  builder: {
+    heading: {
+      describe: 'Read a thought',
+      demandOption: true,
+      type: 'string'
+    }
+  },
+  handler(argv) {
+    thoughts.readThought(argv.heading)
   }
 })
 

@@ -1,14 +1,11 @@
 const fs = require('fs');
 const chalk = require('chalk');
 
-const getThoughts = () => {
-  return "These are some of my thoughts so far...";
-}
-
 const addThought = (heading, body) => {
   const thoughts = loadExistingThoughts()
   const redundantThoughts = thoughts.filter(thought => thought.heading === heading)
-  if(redundantThoughts.length === 0) {
+  const redundantThought = thoughts.find(thought => though.heading === heading)
+  if(!redundantThought) {
     thoughts.push({
       heading: heading,
       body: body
@@ -19,6 +16,17 @@ const addThought = (heading, body) => {
     console.log(chalk.cyan.bold('That\'s not an original thought!'))
   }
 
+}
+
+const readThought = (heading) => {
+  const thoughts = loadExistingThoughts();
+  const thought = thoughts.find(thought => thought.heading = heading);
+  if(thought) {
+    console.log(chalk.black.inverse(thought.heading))
+    console.log(chalk.blue.bold(thought.body))
+  } else {
+    console.log(chalk.red.inverse.bold('No thought found with that heading.'))
+  }
 }
 
 const saveThoughts = (thoughts) => {
@@ -56,8 +64,8 @@ const listThoughts = () => {
 }
 
 module.exports = {
-  getThoughts: getThoughts,
   addThought: addThought,
   removeThought: removeThought,
-  listThoughts: listThoughts
+  listThoughts: listThoughts,
+  readThought: readThought
 };
