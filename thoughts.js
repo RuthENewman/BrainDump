@@ -3,8 +3,10 @@ const chalk = require('chalk');
 
 const addThought = (heading, body) => {
   const thoughts = loadExistingThoughts()
-  const redundantThoughts = thoughts.filter(thought => thought.heading === heading)
-  const redundantThought = thoughts.find(thought => though.heading === heading)
+  const redundantThought = thoughts.find(thought => thought.heading === heading)
+
+  console.log(redundantThought)
+
   if(!redundantThought) {
     thoughts.push({
       heading: heading,
