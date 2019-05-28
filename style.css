@@ -1,0 +1,57 @@
+body {
+  height: 100vh;
+  background-image: -webkit-linear-gradient(bottom, #a8edea 0%, #fed6e3 100%);
+  background-image: -o-linear-gradient(bottom, #a8edea 0%, #fed6e3 100%);
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: teal;
+  font-size: 20px;
+}
+
+
+* {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+form {
+  border: 3px solid teal;
+  border-radius: 10px;
+  display: relative;
+  width: 50%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+input, label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+input#heading, input#thoughtText {
+  display: block;
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+select#action {
+  margin-bottom: 10px;
+  font-size: 20px;
+  padding: 5px;
+  text-align: center;
+}
+
+textarea {
+  width: 80%;
+  margin-bottom: 20px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+
+#heading {
+  color: teal;
+  margin-top: 20px;
+}

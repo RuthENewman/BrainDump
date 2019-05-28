@@ -5,7 +5,7 @@ const addThought = (heading, body) => {
   const thoughts = loadExistingThoughts()
   const redundantThought = thoughts.find(thought => thought.heading === heading)
 
-  console.log(redundantThought)
+  debugger
 
   if(!redundantThought) {
     thoughts.push({
